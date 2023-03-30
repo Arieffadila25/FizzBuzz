@@ -1,0 +1,21 @@
+const sieve = new Array(100);
+
+const steps = [
+    { step: 3, value: "Fizz" },
+    { step: 5, value: "Buzz" },
+    { step: 15, value: "FizzBuzz" },
+]
+
+for (let i = 0; i <= 100; i++) {
+    sieve[i] = i;
+}
+
+for (let s of steps) {
+    for (let i = s.step; i <= 100; i += s.step) {
+        sieve[i] = s.value;
+    }
+}
+
+for (let i in sieve) {
+    console.log(i, sieve[i])
+}
